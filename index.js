@@ -37,3 +37,32 @@ console.log(sweatshirtPricing(4));
 //if the number is 4 or more, we return the price * num * 0.65
 
 //####################################################################################################
+
+//2.
+//Clock Hand Angles, Revisited
+
+/* Return to your previous clockHandAngles solution.
+Allow fractional values for input seconds, 
+but change your implementation to print only integer values for angles (in degrees) of the various hands. */
+
+function clockHandAngles(seconds){
+    var hours = Math.floor(seconds / 3600);
+    var minutes = Math.floor((seconds % 3600) / 60);
+    var secs = Math.floor((seconds % 3600) % 60);
+    var hourHand = hours * 30 + minutes * 0.5;
+    var minuteHand = minutes * 6;
+    var secondHand = secs * 6;
+    console.log("Hour hand: " + hourHand + " degrees. Minute hand: " + minuteHand + " degrees. Second hand: " + secondHand + " degrees.");
+}
+
+clockHandAngles(119730);
+
+//we set the hours to be the floor of the seconds divided by 3600
+//we set the minutes to be the floor of the remainder of the seconds divided by 3600 divided by 60
+//we set the seconds to be the floor of the remainder of the seconds divided by 3600 divided by 60
+//we set the hour hand to be the hours times 30 plus the minutes times 0.5
+//we set the minute hand to be the minutes times 6
+//we set the second hand to be the seconds times 6
+//we print the hour hand, minute hand, and second hand
+
+//####################################################################################################
